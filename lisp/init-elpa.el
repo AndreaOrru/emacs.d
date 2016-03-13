@@ -1,6 +1,12 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+; Add MELPA repository to the package sources:
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+; Initialize Package but don't load packages by default:
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+; On-demand installation of packages:
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be
@@ -15,8 +21,5 @@ re-downloaded in order to locate PACKAGE."
       (progn
         (package-refresh-contents)
         (require-package package min-version t)))))
-
-(setq package-enable-at-startup nil)
-(package-initialize)
 
 (provide 'init-elpa)
