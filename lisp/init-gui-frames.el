@@ -6,9 +6,9 @@
 ;;; Code:
 
 ; Disable toolbar and scrollbar:
-(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(when (fboundp 'set-scroll-bar-mode) (set-scroll-bar-mode nil))
+(menu-bar-mode -1)
+(if window-system (tool-bar-mode -1))
+(if window-system (scroll-bar-mode -1))
 ; Disable startup screen:
 (setq inhibit-startup-screen t)
 

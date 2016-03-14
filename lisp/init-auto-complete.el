@@ -10,7 +10,6 @@
 
 (ac-config-default)
 (global-auto-complete-mode t)
-(ac-linum-workaround)  ; Avoid conflicts with Linum.
 
 (provide 'init-auto-complete)
 ;;; init-auto-complete.el ends here
