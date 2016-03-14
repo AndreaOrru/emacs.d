@@ -1,3 +1,10 @@
+;;; init.el --- Emacs initialization.
+
+;;; Commentary:
+;;;   Bootstrap the configuration by loading all the modules.
+
+;;; Code:
+
 ; Add the "lisp/" directory to the load path:
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -9,3 +16,10 @@
 (require 'init-elpa)
 (require 'init-themes)
 (require 'init-gui-frames)
+(require 'init-flycheck)
+(require 'init-ido)
+(require 'init-auto-complete)
+(require 'init-editing-utils)
+
+(provide 'init)
+;;; init.el ends here
