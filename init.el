@@ -20,6 +20,7 @@
 (require 'init-ido)
 (require 'init-auto-complete)
 (require 'init-editing-utils)
+(require 'init-misc)
 
 (provide 'init)
 ;;; init.el ends here
