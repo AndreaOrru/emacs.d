@@ -1,7 +1,7 @@
-;;; init-lisp.el --- Stuff.
+;;; init-lisp.el --- Emacs Lisp configuration.
 
 ;;; Commentary:
-;;;   Stuff.
+;;;   Set initial message and discard old bytecode files.
 
 ;;; Code:
 (setq-default initial-scratch-message ";; Close the world, txEn eht nepO\n\n")
