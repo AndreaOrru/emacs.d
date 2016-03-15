@@ -21,9 +21,11 @@
 (require 'init-auto-complete)
 (require 'init-editing-utils)
 
+(require 'init-cc)
 (require 'init-python-mode)
 (require 'init-lisp)
 
+(require 'init-semantic)
 (require 'init-misc)
 
 (provide 'init)

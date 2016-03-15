@@ -1,6 +1,7 @@
 /.python-environments/
 /auto-save-list/
 /elpa/
+/semanticdb/
 
 /ac-comphist.dat
 /custom.el

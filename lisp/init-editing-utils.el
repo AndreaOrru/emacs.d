@@ -16,10 +16,12 @@
 (if window-system (global-hl-line-mode t))
 
 (setq-default
-  auto-save-default nil   ; Don't auto save files.
-  column-number-mode t    ; Show column number in status bar.
-  indent-tabs-mode nil    ; Don't use tabs to indent.
-  make-backup-files nil)  ; Don't create backup files.
+  auto-save-default nil    ; Don't auto save files.
+  column-number-mode t     ; Show column number in status bar.
+  indent-tabs-mode nil     ; Don't use tabs to indent.
+  make-backup-files nil    ; Don't create backup files.
+  require-final-newline t  ; Add final newline on saving.
+  tab-width 4)             ; Tabs displayed as 4 spaces.
 
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
