@@ -23,6 +23,7 @@
 
 (require 'init-cc)
 (require 'init-python-mode)
+(require 'init-web-mode)
 (require 'init-lisp)
 
 (require 'init-semantic)
