@@ -1,7 +1,7 @@
 ;;; init-cc.el --- C/C++ mode.
 
 ;;; Commentary:
-;;;   Initialize C/C++ preferences and keybindings.
+;;;   Initialize C/C++ preferences.
 
 ;;; Code:
 
