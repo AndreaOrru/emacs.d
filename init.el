@@ -22,8 +22,9 @@
 (require 'init-editing-utils)
 
 (require 'init-cc)
-(require 'init-python-mode)
 (require 'init-web-mode)
+(require 'init-python-mode)
+(require 'init-php)
 (require 'init-lisp)
 
 (require 'init-semantic)
