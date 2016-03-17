@@ -14,6 +14,7 @@
 
 ; Load all configuration modules:
 (require 'init-elpa)
+(require 'init-exec-path)
 (require 'init-themes)
 (require 'init-gui-frames)
 (require 'init-flycheck)

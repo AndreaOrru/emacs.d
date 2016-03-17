@@ -1,4 +1,4 @@
-;;; init.el --- PHP mode.
+;;; init-php.el --- PHP mode.
 
 ;;; Commentary:
 ;;;   Install and configure PHP mode.

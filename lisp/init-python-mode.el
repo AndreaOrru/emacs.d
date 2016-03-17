@@ -4,7 +4,6 @@
 ;;;   Initialize Jedi for autocompletion.
 
 ;;; Code:
-(require 'python-environment)
 (require 'require-package)
 
 ; SCons files are Python:
@@ -18,6 +17,7 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 
 ; Install Jedi Server if not present:
+(require 'python-environment)
 (when (not (file-exists-p (expand-file-name "bin/jediepcserver"
                           (expand-file-name python-environment-default-root-name
                                             python-environment-directory))))
