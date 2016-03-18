@@ -9,7 +9,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx?\\'"  . web-mode))
 (add-to-list 'auto-mode-alist '("\\.blade\\." . web-mode))
 
 (defvar web-mode-engines-alist '(("blade" . "\\.blade\\.")))

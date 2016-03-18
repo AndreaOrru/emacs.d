@@ -24,6 +24,7 @@
 
 (require 'init-cc)
 (require 'init-web-mode)
+(require 'init-javascript)
 (require 'init-python-mode)
 (require 'init-php)
 (require 'init-lisp)
