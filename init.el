@@ -20,6 +20,7 @@
 (require 'init-flycheck)
 (require 'init-ido)
 (require 'init-auto-complete)
+(require 'init-windows)
 (require 'init-editing-utils)
 
 (require 'init-cc)
