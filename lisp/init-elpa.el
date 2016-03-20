@@ -7,7 +7,7 @@
 (require 'package)
 
 ; Add MELPA repository to the package sources:
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 ; Initialize Package but don't load packages by default:
 (setq package-enable-at-startup nil)
 (package-initialize)
