@@ -9,7 +9,7 @@
 (require-package 'flycheck-pos-tip)
 
 (global-flycheck-mode 1)
-(flycheck-pos-tip-mode 1)  ; Show errors in tooltips.
+(if window-system (flycheck-pos-tip-mode 1))  ; Show errors in tooltips.
 ; Set the current Emacs load path in Flycheck:
 (setq-default flycheck-emacs-lisp-load-path load-path)
 

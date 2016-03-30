@@ -6,6 +6,7 @@
 ;;; Code:
 (require 'apropos)
 
+(setq ring-bell-function 'ignore)     ; No alarm bell.
 (fset 'yes-or-no-p 'y-or-n-p)         ; Y/N instead of yes/no.
 (setq apropos-do-all t)               ; Show more informations.
 (setq disabled-command-function nil)  ; Enable all functions.
