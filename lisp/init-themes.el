@@ -14,8 +14,5 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night)
 
-; Disable fancy tooltips:
-(setq x-gtk-use-system-tooltips nil)
-
 (provide 'init-themes)
 ;;; init-themes.el ends here
