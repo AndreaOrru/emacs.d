@@ -18,7 +18,7 @@
 (require 'init-themes)
 (require 'init-gui-frames)
 (require 'init-flycheck)
-(require 'init-ido)
+(require 'init-swiper)
 (require 'init-auto-complete)
 (require 'init-windows)
 (require 'init-editing-utils)
