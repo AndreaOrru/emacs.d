@@ -1,13 +1,19 @@
 ;;; init-git.el --- Git, Magit, Github stuff.
 
 ;;; Commentary:
-;;;   Configure Git related modules, maily Magit but also Github integration.
+;;;   Configure Git related modules, mainly Magit but also Github integration.
 
 ;;; Code:
 (require 'require-package)
-(require-package 'magit)
 
+; Magit:
+(require-package 'magit)
 (global-magit-file-mode t)
+
+; Highlight differences:
+(require-package 'diff-hl)
+(global-diff-hl-mode t)
+(diff-hl-flydiff-mode t)
 
 ; Key bindings:
 (global-set-key (kbd "C-x g") 'magit-status)
