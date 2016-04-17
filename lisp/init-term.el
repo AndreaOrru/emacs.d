@@ -17,7 +17,7 @@
     ad-do-it))
 
 ; Keybinding to start a terminal:
-(global-set-key (kbd "C-c C-c") 'ansi-term)
+(global-set-key (kbd "C-c RET") 'ansi-term)
 
 (provide 'init-term)
 ;;; init-term.el ends here

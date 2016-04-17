@@ -7,7 +7,8 @@
 (require 'require-package)
 
 ; Set custom font (except on Mac):
-(if (not (eq system-type 'darwin))
+(if (eq system-type 'darwin)
+  (add-to-list 'default-frame-alist '(font . "Menlo-14"))
   (add-to-list 'default-frame-alist '(font . "Envy Code R-10")))
 
 ; Set theme:
