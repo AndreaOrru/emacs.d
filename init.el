@@ -17,6 +17,7 @@
 (require 'init-exec-path)
 (require 'init-themes)
 (require 'init-gui-frames)
+(require 'init-dired)
 (require 'init-flycheck)
 
 (require 'init-swiper)
