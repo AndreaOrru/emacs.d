@@ -1,4 +1,5 @@
 ;;; init-swiper.el --- Swiper and Ivy mode.
+
 ;;; Commentary:
 ;;;   Initialize Swiper and Ivy mode for completion/search.
 
@@ -22,7 +23,7 @@
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 ; No initial inputs in regex:
-(setq ivy-initial-inputs-alist ())
+(setq ivy-initial-inputs-alist nil)
 
 ; Use Smex to sort commands:
 (require-package 'smex)

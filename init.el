@@ -30,6 +30,7 @@
 (require 'init-php)
 (require 'init-lisp)
 
+(require 'init-term)
 (require 'init-semantic)
 (require 'init-misc)
 
