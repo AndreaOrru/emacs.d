@@ -26,5 +26,9 @@
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+; Enable aggressive indent mode:
+(require-package 'aggressive-indent)
+(global-aggressive-indent-mode t)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
