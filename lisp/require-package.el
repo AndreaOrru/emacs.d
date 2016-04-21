@@ -13,7 +13,7 @@ re-downloaded in order to locate PACKAGE."
     (if (or (assoc package package-archive-contents) no-refresh)
         (if (boundp 'package-selected-packages)
             ; Record this as a package the user installed explicitly:
-            (package-install package nil)  ; Only in Emacs v25.
+            (package-install package nil)
           (package-install package))
       (progn
         (package-refresh-contents)

@@ -1,16 +1,20 @@
 ;;; init-elpa.el --- Package manager initialization.
 
 ;;; Commentary:
-;;;   Add MELPA as a source and initialize Package.
+;;;   Configure package repositories.
 
 ;;; Code:
 (require 'package)
 
-; Add MELPA repository to the package sources:
+; Add MELPA repositories:
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-; Initialize Package but don't load packages by default:
-(setq package-enable-at-startup nil)
-(package-initialize)
+(add-to-list 'package-archives '("melpa"        . "http://melpa.org/packages/"))
+
+; Give priority to stable packages:
+(setq package-archive-priorities
+      '(("gnu"          . 10)
+        ("melpa-stable" . 10)
+        ("melpa"        . 0)))
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here

@@ -1,2 +1,2 @@
 # emacs.d
-Elegant Emacs configuration.
+Elegant Emacs 25 configuration.

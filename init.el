@@ -5,6 +5,10 @@
 
 ;;; Code:
 
+; Initialize package.el before everything else (required by Emacs 25):
+(setq package-enable-at-startup nil)
+(package-initialize)
+
 ; Add the "lisp/" directory to the load path:
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
