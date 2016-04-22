@@ -16,5 +16,9 @@
         ("melpa-stable" . 10)
         ("melpa"        . 0)))
 
+; Unstable packages:
+(setq package-pinned-packages
+      '((js2-mode . "melpa")))
+
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
