@@ -4,12 +4,12 @@
 ;;;   Minimize the interface appearence and set a nice font.
 
 ;;; Code:
-
-; Disable menus, startup screen, etc...
-(menu-bar-mode -1)
+(setq inhibit-startup-screen t)
 (if window-system (tool-bar-mode -1))
 (if window-system (scroll-bar-mode -1))
-(setq inhibit-startup-screen t)
+; Disable menus everywhere but on Mac's graphical mode:
+(if (not (and window-system (eq system-type 'darwin)))
+  (menu-bar-mode -1))
 
 ; Set custom fonts on Mac and on the other platforms:
 (if (eq system-type 'darwin)
