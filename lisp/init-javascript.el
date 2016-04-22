@@ -7,9 +7,9 @@
 (require 'require-package)
 (require-package 'js2-mode)
 
-; Associate file extensions:
-(add-to-list 'auto-mode-alist '("\\.js\\'"  . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode))
+; Associate file extensions and Node interpreter:
+(add-to-list 'auto-mode-alist  '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
 (setq-default js2-basic-offset 2)
 
