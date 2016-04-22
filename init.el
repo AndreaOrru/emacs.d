@@ -40,6 +40,7 @@
 (require 'init-term)
 (require 'init-semantic)
 (require 'init-misc)
+(require 'init-gdb)
 
 (provide 'init)
 ;;; init.el ends here
