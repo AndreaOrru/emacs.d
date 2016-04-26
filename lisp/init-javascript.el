@@ -20,5 +20,13 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-modes 'js2-jsx-mode)
 
+; We are relying on Flycheck for error reporting:
+(defadvice js2-report-error (around my/js2-report-error activate)
+  "Don't report errors in JS2 mode."
+  nil)
+(defadvice js2-report-warning (around my/js2-report-warning activate)
+  "Don't report warnings in JS2 mode."
+  nil)
+
 (provide 'init-javascript)
 ;;; init-javascript.el ends here
