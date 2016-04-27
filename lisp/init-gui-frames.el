@@ -22,7 +22,7 @@
 (if (boundp 'x-gtk-use-system-tooltips)
   (setq x-gtk-use-system-tooltips nil))
 
-; Mouse scrolling fixed:
+; Slower mouse scrolling:
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-scroll-amount
       '(             1
