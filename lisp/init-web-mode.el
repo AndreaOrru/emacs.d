@@ -30,9 +30,5 @@
   (set-face-background 'web-mode-current-element-highlight-face nil)
   (set-face-foreground 'web-mode-current-element-highlight-face "#cc6666")))
 
-; Disable aggressive indent for web mode:
-(require 'aggressive-indent)
-(add-to-list 'aggressive-indent-excluded-modes 'web-mode)
-
 (provide 'init-web-mode)
 ;;; init-web-mode ends here
