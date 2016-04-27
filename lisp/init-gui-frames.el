@@ -25,9 +25,9 @@
 ; Slower mouse scrolling:
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-scroll-amount
-      '(             1
-        ((shift)   . 3)
-        ((control) . 5)))
+      '(             2
+        ((shift)   . 1)
+        ((control) . 7)))
 ; Smooth scrolling:
 (require-package 'smooth-scrolling)
 (smooth-scrolling-mode 1)
