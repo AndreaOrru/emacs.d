@@ -1,9 +1,11 @@
-;;; init-gui-frames.el --- Interface looks.
+;;; init-gui-frames.el --- Interface look and feel.
 
 ;;; Commentary:
-;;;   Minimize the interface appearence and set a nice font.
+;;;   Setup the interface appearence.
 
 ;;; Code:
+(require 'require-package)
+
 (setq inhibit-startup-screen t)
 (if window-system (tool-bar-mode -1))
 (if window-system (scroll-bar-mode -1))
@@ -19,6 +21,16 @@
 ; Disable fancy tooltips on Linux:
 (if (boundp 'x-gtk-use-system-tooltips)
   (setq x-gtk-use-system-tooltips nil))
+
+; Mouse scrolling fixed:
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-scroll-amount
+      '(             1
+        ((shift)   . 3)
+        ((control) . 5)))
+; Smooth scrolling:
+(require-package 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
