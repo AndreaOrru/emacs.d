@@ -22,8 +22,8 @@
 ; Resume last Ivy completion:
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
-; No initial inputs in regex:
-(setq ivy-initial-inputs-alist nil)
+(setq ivy-initial-inputs-alist nil)  ; No initial inputs in regex.
+(setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
 
 ; Use Smex to sort commands:
 (require-package 'smex)
