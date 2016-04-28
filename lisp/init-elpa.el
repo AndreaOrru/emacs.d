@@ -18,7 +18,8 @@
 
 ; Unstable packages:
 (setq package-pinned-packages
-      '((js2-mode . "melpa")))
+      '((js2-mode . "melpa")
+        (neotree  . "melpa")))
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here

@@ -40,6 +40,7 @@
 (require 'init-term)
 (require 'init-semantic)
 (require 'init-misc)
+(require 'init-neotree)
 (require 'init-gdb)
 
 (provide 'init)
