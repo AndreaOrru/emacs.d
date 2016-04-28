@@ -26,5 +26,11 @@
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+; Setup multiple cursors support:
+(require-package 'multiple-cursors)
+(global-set-key (kbd "C-S-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-S-p") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-S-s") 'mc/mark-all-like-this)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
