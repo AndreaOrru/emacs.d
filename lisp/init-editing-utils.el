@@ -23,6 +23,9 @@
   require-final-newline t  ; Add final newline on saving.
   tab-width 4)             ; Tabs displayed as 4 spaces.
 
+; Delete trailing whitespaces on saving:
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
 
