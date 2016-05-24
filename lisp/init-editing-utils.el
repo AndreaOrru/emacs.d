@@ -21,12 +21,14 @@
   indent-tabs-mode nil        ; Don't use tabs to indent.
   make-backup-files nil       ; Don't create backup files.
   require-final-newline t     ; Add final newline on saving.
-  show-trailing-whitespace t  ; Show trailing whitespaces.
   tab-width 4)                ; Tabs displayed as 4 spaces.
 
 ; Delete trailing whitespaces on saving:
 (require-package 'whitespace-cleanup-mode)
 (global-whitespace-cleanup-mode t)
+; Show trailing whitespaces in programming buffers:
+(add-hook 'prog-mode-hook (lambda()
+  (setq show-trailing-whitespace t)))
 
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
