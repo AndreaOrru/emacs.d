@@ -6,6 +6,7 @@
 ;;; Code:
 (require 'require-package)
 (require-package 'swiper)
+(require-package 'counsel)
 
 (require 'ivy)
 (ivy-mode 1)  ; Enable Ivy mode (almost everywhere).
