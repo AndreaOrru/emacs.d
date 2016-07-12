@@ -31,7 +31,7 @@
   (set-face-background 'web-mode-current-element-highlight-face nil)
   (set-face-foreground 'web-mode-current-element-highlight-face "#cc6666")
   ; Disable conflicting electric pair mode:
-  (electric-pair-mode -1)
+  (electric-pair-local-mode -1)
   ; Disable automating quotes after '=' in JSX:
   (if (equal web-mode-content-type "jsx")
     (setq-local web-mode-enable-auto-quoting nil))))
