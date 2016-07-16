@@ -31,9 +31,10 @@
 (require 'init-git)
 
 (require 'init-cc)
+(require 'init-nim)
 (require 'init-web-mode)
 (require 'init-javascript)
-(require 'init-python-mode)
+(require 'init-python)
 (require 'init-php)
 (require 'init-lisp)
 

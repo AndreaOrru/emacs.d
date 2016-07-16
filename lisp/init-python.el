@@ -1,4 +1,4 @@
-;;; init-python-mode.el --- Python mode.
+;;; init-python.el --- Python mode.
 
 ;;; Commentary:
 ;;;   Initialize Jedi for autocompletion.
@@ -23,5 +23,5 @@
                                             python-environment-directory))))
   (jedi:install-server))
 
-(provide 'init-python-mode)
-;;; init-python-mode.el ends here
+(provide 'init-python)
+;;; init-python.el ends here
