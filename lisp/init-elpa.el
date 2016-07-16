@@ -7,7 +7,7 @@
 (require 'package)
 
 ; Add MELPA repository:
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
