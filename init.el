@@ -28,6 +28,7 @@
 (require 'init-auto-complete)
 (require 'init-windows)
 (require 'init-editing-utils)
+(require 'init-multiple-cursors)
 (require 'init-git)
 
 (require 'init-cc)

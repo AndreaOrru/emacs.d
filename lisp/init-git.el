@@ -8,12 +8,12 @@
 
 ; Magit:
 (require-package 'magit)
-(global-magit-file-mode t)
+(global-magit-file-mode 1)
 
 ; Highlight differences:
 (require-package 'diff-hl)
-(global-diff-hl-mode t)
-(diff-hl-flydiff-mode t)
+(global-diff-hl-mode 1)
+(diff-hl-flydiff-mode 1)
 ; Magit/diff-hl integration:
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 

@@ -4,6 +4,7 @@
 /eshell/
 /semanticdb/
 
+/.mc-lists.el
 /.smex-items
 /ac-comphist.dat
 /custom.el
