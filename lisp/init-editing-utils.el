@@ -33,5 +33,10 @@
 ; Insert line break and then indent the new line:
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+; Progressive expansion of selected region:
+(require-package 'expand-region)
+(global-set-key (kbd "C->") 'er/expand-region)
+(global-set-key (kbd "C-<") 'er/contract-region)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
