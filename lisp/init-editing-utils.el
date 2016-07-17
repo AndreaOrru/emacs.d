@@ -12,6 +12,7 @@
 
 (show-paren-mode 1)     ; Highlight matching parentheses.
 (electric-pair-mode 1)  ; Autocomplete pairs.
+(blink-cursor-mode -1)  ; Disable blinking cursor.
 ; Highlight the current line in graphical mode:
 (if window-system (global-hl-line-mode 1))
 
