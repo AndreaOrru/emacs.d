@@ -8,8 +8,10 @@
 (require-package 'swiper)
 (require-package 'counsel)
 
+; Enable Ivy mode (almost everywhere):
 (require 'ivy)
-(ivy-mode 1)  ; Enable Ivy mode (almost everywhere).
+(ivy-mode 1)
+(diminish 'ivy-mode)
 
 ; Ivy for standard commands:
 (global-set-key (kbd "C-s") 'swiper)

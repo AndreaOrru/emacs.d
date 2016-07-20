@@ -21,9 +21,10 @@
 (require 'init-exec-path)
 (require 'init-themes)
 (require 'init-gui-frames)
+(require 'init-misc)
+
 (require 'init-dired)
 (require 'init-flycheck)
-
 (require 'init-swiper)
 (require 'init-auto-complete)
 (require 'init-windows)
@@ -41,7 +42,6 @@
 
 (require 'init-term)
 (require 'init-semantic)
-(require 'init-misc)
 (require 'init-neotree)
 (require 'init-gdb)
 

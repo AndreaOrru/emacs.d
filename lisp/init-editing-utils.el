@@ -9,6 +9,7 @@
 (require 'require-package)
 (require-package 'whole-line-or-region)
 (whole-line-or-region-mode 1)
+(diminish 'whole-line-or-region-mode)
 
 (show-paren-mode 1)     ; Highlight matching parentheses.
 (electric-pair-mode 1)  ; Autocomplete pairs.
