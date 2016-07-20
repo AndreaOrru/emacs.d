@@ -1,7 +1,7 @@
 ;;; init-python.el --- Python mode.
 
 ;;; Commentary:
-;;;   Initialize Jedi for autocompletion.
+;;;   SCons support, and Jedi for autocompletion.
 
 ;;; Code:
 (require 'require-package)

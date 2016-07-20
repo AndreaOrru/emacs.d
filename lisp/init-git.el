@@ -1,7 +1,7 @@
 ;;; init-git.el --- Git, Magit, Github stuff.
 
 ;;; Commentary:
-;;;   Configure Git related modules, mainly Magit but also Github integration.
+;;;   Configure Git related modules (mainly Magit).
 
 ;;; Code:
 (require 'require-package)

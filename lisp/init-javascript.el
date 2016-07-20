@@ -14,7 +14,7 @@
 (add-hook 'js2-jsx-mode-hook '(lambda()
   (setq js2-basic-offset 2)
   (setq js-switch-indent-offset 2)
-  ; Fast switch to web-mode (for JSX's HTML tags):
+  ; Fast switch to web-mode (for JSX tags):
   (local-set-key (kbd "C-c m") 'web-mode)))
 
 ; Activate autocompletion in js2-jsx-mode:
