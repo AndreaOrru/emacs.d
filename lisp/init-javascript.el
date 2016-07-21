@@ -4,6 +4,7 @@
 ;;;   JavaScript IDE mode for JS, JSX files.
 
 ;;; Code:
+(require 'company)
 (require 'require-package)
 (require-package 'js2-mode)
 
@@ -12,14 +13,13 @@
 (add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
 
 (add-hook 'js2-jsx-mode-hook '(lambda()
+  (tern-mode 1)  ; Intelligent analysis.
   (setq js2-basic-offset 2)
   (setq js-switch-indent-offset 2)
+  ; Align company annotations to the right:
+  (set (make-local-variable 'company-tooltip-align-annotations) t)
   ; Fast switch to web-mode (for JSX tags):
   (local-set-key (kbd "C-c m") 'web-mode)))
-
-; Activate autocompletion in js2-jsx-mode:
-(require 'auto-complete-config)
-(add-to-list 'ac-modes 'js2-jsx-mode)
 
 ; We are relying on Flycheck for error reporting:
 (defadvice js2-report-error (around my/js2-report-error activate)
@@ -28,6 +28,10 @@
 (defadvice js2-report-warning (around my/js2-report-warning activate)
   "Don't report warnings in JS2 mode."
   nil)
+
+; Company autocompletion through Tern:
+(require-package 'company-tern)
+(add-to-list 'company-backends 'company-tern)
 
 (provide 'init-javascript)
 ;;; init-javascript.el ends here

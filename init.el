@@ -26,7 +26,7 @@
 (require 'init-dired)
 (require 'init-flycheck)
 (require 'init-swiper)
-(require 'init-auto-complete)
+(require 'init-company)
 (require 'init-windows)
 (require 'init-editing-utils)
 (require 'init-multiple-cursors)

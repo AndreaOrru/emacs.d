@@ -14,16 +14,31 @@
 
 ; Common preferences:
 (add-hook 'c-mode-common-hook '(lambda()
+  (abbrev-mode -1)                 ; Disable Abbrev mode.
+  (c-set-style "ellemtel")         ; C++ coding standard.
+  (setq c-basic-offset 4)          ; Indent with 4 spaces.
+  (c-set-offset 'innamespace 0)    ; Don't indent namespaces.
+  (c-set-offset 'access-label '/)  ; Half-indent access labels.
   ; Enable Irony only for supported modes:
   (when (memq major-mode irony-supported-major-modes)
-    (irony-mode 1))
-  (abbrev-mode -1)                   ; Disable Abbrev mode.
-  (c-set-style "ellemtel")           ; C++ coding standard.
-  (setq c-basic-offset 4)            ; Indent with 4 spaces.
-  (c-set-offset 'innamespace 0)      ; Don't indent namespaces.
-  (c-set-offset 'access-label '/)))  ; Half-indent access labels.
+    (irony-mode 1))))
 
-(diminish 'irony-mode)
+; Autoload compilation options:
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+; Company autocompletion through Irony:
+(require 'company)
+(require-package 'company-irony)
+(require-package 'company-irony-c-headers)
+(add-to-list 'company-backends '(company-irony-c-headers company-irony))
+
+; Syntax checking through Irony:
+(require 'flycheck)
+(require-package 'flycheck-irony)
+(add-hook 'flycheck-mode-hook 'flycheck-irony-setup)
+(setq-default flycheck-disabled-checkers
+              (append flycheck-disabled-checkers
+                      '(c/c++-clang c/c++-gcc)))
 
 (provide 'init-cc)
 ;;; init-cc.el ends here
