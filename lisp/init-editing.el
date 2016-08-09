@@ -1,7 +1,7 @@
-;;; init-editing-utils.el --- Editor behaviour.
+;;; init-editing.el --- Text editing behaviour.
 
 ;;; Commentary:
-;;;  Indentation levels, highlight matching parenthesis, etc.
+;;;  Indentation, parenthesis highlight, and other editing utils.
 
 ;;; Code:
 
@@ -42,5 +42,5 @@
 (global-set-key (kbd "C->") 'er/expand-region)
 (global-set-key (kbd "C-<") 'er/contract-region)
 
-(provide 'init-editing-utils)
-;;; init-editing-utils.el ends here
+(provide 'init-editing)
+;;; init-editing.el ends here

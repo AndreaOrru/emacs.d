@@ -1,7 +1,7 @@
-;;; init-swiper.el --- Swiper and Ivy mode.
+;;; init-ivy.el --- Ivy and Swiper mode.
 
 ;;; Commentary:
-;;;   Initialize Swiper and Ivy mode for completion/search.
+;;;   Initialize Ivy and Swiper mode for completion/search.
 
 ;;; Code:
 (require 'require-package)
@@ -33,5 +33,5 @@
 (defvar smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 (smex-initialize)
 
-(provide 'init-swiper)
-;;; init-swiper.el ends here
+(provide 'init-ivy)
+;;; init-ivy.el ends here

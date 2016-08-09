@@ -13,6 +13,9 @@
 (setq apropos-do-all t)               ; Show more informations.
 (setq disabled-command-function nil)  ; Enable all functions.
 
+(winner-mode 1)                 ; Windows layout history.
+(windmove-default-keybindings)  ; Navigate windows with S-arrows.
+
 ; Don't show some minor modes:
 ;(diminish 'abbrev-mode)
 

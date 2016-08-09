@@ -1,11 +1,11 @@
-;;; init-gui-frames.el --- Interface look and feel.
+;;; init-frame.el --- Interface look and feel.
 
 ;;; Commentary:
 ;;;   Setup the interface appearence.
 
 ;;; Code:
 
-; Disable toolbar, scrollbar and menu (not on Mac):
+; Disable toolbar, scrollbar and menu (but keep menu on Mac):
 (if window-system (tool-bar-mode -1))
 (if window-system (scroll-bar-mode -1))
 (if (not (and window-system (eq system-type 'darwin)))
@@ -35,5 +35,5 @@
 (require-package 'smooth-scrolling)
 (smooth-scrolling-mode 1)
 
-(provide 'init-gui-frames)
-;;; init-gui-frames.el ends here
+(provide 'init-frame)
+;;; init-frame.el ends here

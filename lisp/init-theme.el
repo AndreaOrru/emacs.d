@@ -1,4 +1,4 @@
-;;; init-themes.el --- Theme configuration.
+;;; init-theme.el --- Theme configuration.
 
 ;;; Commentary:
 ;;;   Install "Tomorrow" theme from MELPA and load it.
@@ -9,5 +9,5 @@
 (require-package 'color-theme-sanityinc-tomorrow)
 (load-theme 'sanityinc-tomorrow-night)
 
-(provide 'init-themes)
-;;; init-themes.el ends here
+(provide 'init-theme)
+;;; init-theme.el ends here
