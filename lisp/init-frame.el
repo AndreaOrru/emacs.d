@@ -5,6 +5,9 @@
 
 ;;; Code:
 
+; Start maximized:
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
 ; Disable toolbar, scrollbar and menu (but keep menu on Mac):
 (if window-system (tool-bar-mode -1))
 (if window-system (scroll-bar-mode -1))
