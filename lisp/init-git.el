@@ -8,14 +8,18 @@
 
 ; Magit:
 (require-package 'magit)
+(require 'magit)
 (global-magit-file-mode 1)
 
 ; Highlight differences:
 (require-package 'diff-hl)
 (global-diff-hl-mode 1)
 (diff-hl-flydiff-mode 1)
+
 ; Magit/diff-hl integration:
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+; Ivy integration:
+(setq magit-completing-read-function 'ivy-completing-read)
 
 ; Key bindings:
 (global-set-key (kbd "C-x g") 'magit-status)

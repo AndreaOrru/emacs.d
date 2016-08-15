@@ -12,14 +12,16 @@
 (require 'company-dabbrev)
 
 (global-company-mode 1)
-(company-quickhelp-mode 1)  ; Show documentation popups.
+(diminish 'company-mode)
 
 (define-key company-mode-map (kbd "M-TAB") 'company-try-hard)
+(define-key company-mode-map (kbd "C-c /") 'company-files)
 (define-key company-active-map (kbd "M-TAB") 'company-select-next)
 (define-key company-active-map (kbd "M-h") 'company-quickhelp-mode)
 
-(setq company-dabbrev-downcase nil)  ; Respect case of pure text.
-(setq company-idle-delay 0.3)        ; Faster autocompletion.
+(setq company-dabbrev-downcase nil)         ; Respect case of pure text.
+(setq company-idle-delay 0.3)               ; Faster autocompletion.
+(setq company-tooltip-align-annotations t)  ; Align annotations to the right.
 
 (provide 'init-company)
 ;;; init-company.el ends here

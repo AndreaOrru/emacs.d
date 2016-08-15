@@ -20,30 +20,29 @@
 (require 'init-elpa)
 (require 'init-exec-path)
 (require 'init-frame)
+(require 'init-misc)
 (require 'init-theme)
 
 (require 'init-editing)
-(require 'init-misc)
 (require 'init-multiple-cursors)
 
 (require 'init-company)
-(require 'init-dired)
-(require 'init-git)
+(require 'init-flycheck)
 (require 'init-ivy)
-(require 'init-neotree)
-(require 'init-term)
 
 (require 'init-cc)
 (require 'init-lisp)
-(require 'init-nim)
 (require 'init-javascript)
 (require 'init-php)
 (require 'init-python)
 (require 'init-web-mode)
 
-(require 'init-flycheck)
+(require 'init-dired)
 (require 'init-gdb)
+(require 'init-git)
+(require 'init-neotree)
 (require 'init-semantic)
+(require 'init-term)
 
 (provide 'init)
 ;;; init.el ends here

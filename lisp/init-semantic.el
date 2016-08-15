@@ -4,10 +4,18 @@
 ;;;  Enable Semantic mode and submodes.
 
 ;;; Code:
+(require 'semantic)
+
+; Semantic submodes (mostly cosmetics):
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
 
-(semantic-mode 1)
+; Disable Semantic for Python mode (conflicts with Anaconda ElDoc):
+(with-eval-after-load 'semantic
+  (add-to-list 'semantic-inhibit-functions (lambda()
+    (not (equal major-mode 'python-mode)))))
+
+(semantic-mode 1)  ; Enable Semantic globally.
 
 (provide 'init-semantic)
 ;;; init-semantic.el ends here
