@@ -17,7 +17,7 @@
 (windmove-default-keybindings)  ; Navigate windows with S-arrows.
 
 ; Don't show some minor modes:
-;(diminish 'abbrev-mode)
+(diminish 'eldoc-mode)
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
