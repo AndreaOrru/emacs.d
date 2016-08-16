@@ -30,19 +30,20 @@
 (require 'init-flycheck)
 (require 'init-ivy)
 
-(require 'init-cc)
-(require 'init-lisp)
-(require 'init-javascript)
-(require 'init-php)
-(require 'init-python)
-(require 'init-web-mode)
-
 (require 'init-dired)
 (require 'init-gdb)
 (require 'init-git)
 (require 'init-neotree)
 (require 'init-semantic)
 (require 'init-term)
+
+(require 'init-cc)
+(require 'init-lisp)
+(require 'init-javascript)
+(require 'init-php)
+(require 'init-python)
+(require 'init-rust)
+(require 'init-web-mode)
 
 (provide 'init)
 ;;; init.el ends here

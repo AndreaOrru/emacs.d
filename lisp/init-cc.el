@@ -19,8 +19,6 @@
   (setq c-basic-offset 4)          ; Indent with 4 spaces.
   (c-set-offset 'innamespace 0)    ; Don't indent namespaces.
   (c-set-offset 'access-label '/)  ; Half-indent access labels.
-  ; Do not align company annotations to the right:
-  (set (make-local-variable 'company-tooltip-align-annotations) nil)
   ; Enable Irony only for supported modes:
   (when (memq major-mode irony-supported-major-modes)
     (irony-mode 1))))

@@ -19,9 +19,12 @@
 (define-key company-active-map (kbd "M-TAB") 'company-select-next)
 (define-key company-active-map (kbd "M-h") 'company-quickhelp-mode)
 
-(setq company-dabbrev-downcase nil)         ; Respect case of pure text.
-(setq company-idle-delay 0.3)               ; Faster autocompletion.
-(setq company-tooltip-align-annotations t)  ; Align annotations to the right.
+(setq company-dabbrev-downcase nil)  ; Respect case of pure text.
+(setq company-idle-delay 0.3)        ; Faster autocompletion.
+
+; Highlight annotation when selected:
+(set-face-background 'company-tooltip-annotation-selection
+                     (face-background 'company-tooltip-selection))
 
 (provide 'init-company)
 ;;; init-company.el ends here

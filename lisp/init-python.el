@@ -1,7 +1,7 @@
 ;;; init-python.el --- Python mode.
 
 ;;; Commentary:
-;;;   SCons support, and Jedi for autocompletion.
+;;;   SCons support and company completion through Anaconda.
 
 ;;; Code:
 
@@ -16,25 +16,19 @@
                 ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
+; Enable Anaconda mode:
 (require 'require-package)
 (require-package 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
+; Enable autocompletion through company and Anaconda:
 (require 'company)
 (require-package 'company-anaconda)
 (add-to-list 'company-backends 'company-anaconda)
-
-; Install Jedi:
-;(require-package 'jedi)
-;(add-hook 'python-mode-hook 'jedi:setup)
-
-; Install Jedi Server if not present:
-;(require 'python-environment)
-;(when (not (file-exists-p (expand-file-name "bin/jediepcserver"
-;                          (expand-file-name python-environment-default-root-name
-;                                            python-environment-directory))))
-;  (jedi:install-server))
+; Align company annotations to the right:
+(add-hook 'python-mode-hook (lambda()
+  (set (make-local-variable 'company-tooltip-align-annotations) t)))
 
 (provide 'init-python)
 ;;; init-python.el ends here

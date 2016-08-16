@@ -1,7 +1,7 @@
-;;; init-ivy.el --- Ivy and Swiper mode.
+;;; init-ivy.el --- Ivy, Counsel and Swiper mode.
 
 ;;; Commentary:
-;;;   Initialize Ivy and Swiper mode for completion/search.
+;;;   Initialize Ivy, Counsel and Swiper mode for completion/search/everything.
 
 ;;; Code:
 (require 'require-package)
@@ -34,8 +34,8 @@
 (setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
 
 ; Abbrievate /home/<user> with ~:
-(ivy-set-display-transformer #'ivy-recentf #'abbreviate-file-name)
-(ivy-set-display-transformer #'counsel-locate #'abbreviate-file-name)
+(ivy-set-display-transformer 'ivy-recentf 'abbreviate-file-name)
+(ivy-set-display-transformer 'counsel-locate 'abbreviate-file-name)
 
 ; Use Smex to sort commands:
 (require-package 'smex)
@@ -48,7 +48,7 @@
   "Find a file on `recentf-list' in another window."
   (interactive)
   (ivy-read "Recentf: " recentf-list
-            :action #'find-file-other-window
+            :action 'find-file-other-window
             :caller 'ivy-recentf-other-window))
 
 (defun swiper-use-region ()
@@ -59,7 +59,7 @@
                         (region-beginning) (region-end))))
         (deactivate-mark)
         (swiper selection))
-    (call-interactively #'swiper)))
+    (call-interactively 'swiper)))
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

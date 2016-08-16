@@ -16,6 +16,8 @@
   (tern-mode 1)  ; Intelligent analysis.
   (setq js2-basic-offset 2)
   (setq js-switch-indent-offset 2)
+  ; Align company annotations to the right:
+  (set (make-local-variable 'company-tooltip-align-annotations) t)
   ; Fast switch to web-mode (for JSX tags):
   (local-set-key (kbd "C-c m") 'web-mode)))
 
