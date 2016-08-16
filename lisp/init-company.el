@@ -15,7 +15,6 @@
 (diminish 'company-mode)
 
 (define-key company-mode-map (kbd "M-TAB") 'company-try-hard)
-(define-key company-mode-map (kbd "C-c /") 'company-files)
 (define-key company-active-map (kbd "M-TAB") 'company-select-next)
 (define-key company-active-map (kbd "M-h") 'company-quickhelp-mode)
 
