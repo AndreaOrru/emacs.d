@@ -36,6 +36,10 @@
 (require 'flycheck)
 (require-package 'flycheck-irony)
 (add-hook 'flycheck-mode-hook 'flycheck-irony-setup)
+; Chain cppcheck:
+(require 'flycheck-irony)
+(flycheck-add-next-checker 'irony '(warning . c/c++-cppcheck))
+; Disable clang/gcc checkers:
 (setq-default flycheck-disabled-checkers
               (append flycheck-disabled-checkers
                       '(c/c++-clang c/c++-gcc)))
