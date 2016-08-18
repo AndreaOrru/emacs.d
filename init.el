@@ -34,6 +34,7 @@
 (require 'init-gdb)
 (require 'init-git)
 (require 'init-neotree)
+(require 'init-semantic)
 (require 'init-term)
 
 (require 'init-cc)

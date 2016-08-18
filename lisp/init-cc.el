@@ -44,5 +44,12 @@
               (append flycheck-disabled-checkers
                       '(c/c++-clang c/c++-gcc)))
 
+(defadvice irony-cdb--update-compile-options (after my/irony-cdb--update-compile-options activate)
+  "Pass the include paths detected by Irony to Semantic."
+  (dolist (dir (irony--extract-user-search-paths
+                irony--compile-options
+                irony--working-directory))
+    (semantic-add-system-include dir)))
+
 (provide 'init-cc)
 ;;; init-cc.el ends here
