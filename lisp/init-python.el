@@ -10,10 +10,12 @@
 (setq python-shell-interpreter "python3")
 (setq python-shell-completion-native-enable nil)
 
-; SCons files are Python:
+; SCons files are Python, but don't try to lint them:
+(define-derived-mode scons-mode python-mode
+  "SCons" "Major mode for editing SCons files.")
 (setq auto-mode-alist
-      (append '(("SConstruct\\'" . python-mode)
-                ("SConscript\\'" . python-mode))
+      (append '(("SConstruct\\'" . scons-mode)
+                ("SConscript\\'" . scons-mode))
               auto-mode-alist))
 
 ; Enable Anaconda mode:

@@ -38,8 +38,9 @@
 (require 'init-term)
 
 (require 'init-cc)
-(require 'init-lisp)
 (require 'init-javascript)
+(require 'init-lisp)
+(require 'init-markdown)
 (require 'init-php)
 (require 'init-python)
 (require 'init-rust)

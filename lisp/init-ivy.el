@@ -35,6 +35,7 @@
 
 ; Abbrievate /home/<user> with ~:
 (ivy-set-display-transformer 'ivy-recentf 'abbreviate-file-name)
+(ivy-set-display-transformer 'ivy-recentf-other-window 'abbreviate-file-name)
 (ivy-set-display-transformer 'counsel-locate 'abbreviate-file-name)
 
 ; Use Smex to sort commands:
