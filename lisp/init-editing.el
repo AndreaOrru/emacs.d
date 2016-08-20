@@ -11,9 +11,10 @@
 (whole-line-or-region-mode 1)
 (diminish 'whole-line-or-region-mode)
 
-(show-paren-mode 1)     ; Highlight matching parentheses.
-(electric-pair-mode 1)  ; Autocomplete pairs.
-(blink-cursor-mode -1)  ; Disable blinking cursor.
+(show-paren-mode 1)      ; Highlight matching parentheses.
+(electric-pair-mode 1)   ; Autocomplete pairs.
+(blink-cursor-mode -1)   ; Disable blinking cursor.
+(global-subword-mode 1)  ; CamelCase aware editing.
 ; Highlight the current line in graphical mode:
 (if window-system (global-hl-line-mode 1))
 

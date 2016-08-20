@@ -8,5 +8,6 @@
 
 /.mc-lists.el
 /.smex-items
+/company-statistics-cache.el
 /custom.el
 /recentf

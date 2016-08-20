@@ -17,6 +17,7 @@
 (define-key company-mode-map [tab] 'company-indent-or-complete-common)
 (define-key company-mode-map (kbd "TAB") 'company-indent-or-complete-common)
 (define-key company-mode-map (kbd "M-TAB") 'company-try-hard)
+(define-key company-mode-map (kbd "C-c /") 'company-files)
 
 (define-key company-active-map [tab] 'company-select-next-if-tooltip-visible-or-complete-selection)
 (define-key company-active-map (kbd "TAB") 'company-select-next-if-tooltip-visible-or-complete-selection)
@@ -29,6 +30,10 @@
 (setq company-idle-delay 0.3)              ; Faster autocompletion.
 (setq company-selection-wrap-around t)     ; Cycle candidates.
 (setq-default company-search-filtering t)  ; Filter when searching.
+
+; Sort by frequence:
+(require-package 'company-statistics)
+(company-statistics-mode 1)
 
 ; Highlight annotation when selected:
 (set-face-background 'company-tooltip-annotation-selection
