@@ -8,6 +8,8 @@
 (require-package 'diminish)
 (require 'apropos)
 
+(setq-default initial-scratch-message ";; Close the world, txEn eht nepO\n\n")
+
 (setq ring-bell-function 'ignore)     ; No alarm bell.
 (fset 'yes-or-no-p 'y-or-n-p)         ; Y/N instead of yes/no.
 (setq apropos-do-all t)               ; Show more informations.

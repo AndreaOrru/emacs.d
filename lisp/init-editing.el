@@ -39,8 +39,8 @@
 ; Progressive expansion of selected region:
 (require-package 'expand-region)
 (setq expand-region-fast-keys-enabled nil)
-(global-set-key (kbd "C->") 'er/expand-region)
-(global-set-key (kbd "C-<") 'er/contract-region)
+(global-set-key (kbd "C-.") 'er/expand-region)
+(global-set-key (kbd "C-,") 'er/contract-region)
 
 (provide 'init-editing)
 ;;; init-editing.el ends here

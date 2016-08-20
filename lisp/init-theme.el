@@ -7,7 +7,7 @@
 (require 'require-package)
 
 (require-package 'color-theme-sanityinc-tomorrow)
-(load-theme 'sanityinc-tomorrow-night)
+(color-theme-sanityinc-tomorrow-night)
 
 (provide 'init-theme)
 ;;; init-theme.el ends here

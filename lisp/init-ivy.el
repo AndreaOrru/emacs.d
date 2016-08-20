@@ -21,8 +21,8 @@
 (global-set-key (kbd "C-x 4 f") 'ivy-recentf-other-window)
 ; Ivy for shell and system tools:
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-c j") 'counsel-git-grep-use-region)
+(global-set-key (kbd "C-c k") 'counsel-ag-use-region)
 (global-set-key (kbd "C-c l") 'counsel-locate)
 ; Resume last Ivy completion:
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
@@ -32,6 +32,8 @@
 
 (setq ivy-initial-inputs-alist nil)  ; No initial inputs in regex.
 (setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
+; Ignore order of words while searching:
+(setq ivy-re-builders-alist '((t . ivy--regex-ignore-order)))
 
 ; Abbrievate /home/<user> with ~:
 (ivy-set-display-transformer 'ivy-recentf 'abbreviate-file-name)
@@ -43,7 +45,7 @@
 (defvar smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 (smex-initialize)
 
-; Custom Ivy functions:
+; Define custom Ivy functions:
 (require 'recentf)
 (defun ivy-recentf-other-window ()
   "Find a file on `recentf-list' in another window."
@@ -52,15 +54,22 @@
             :action 'find-file-other-window
             :caller 'ivy-recentf-other-window))
 
-(defun swiper-use-region ()
-  "Search for active region or input."
-  (interactive)
-  (if (region-active-p)
-      (let ((selection (buffer-substring-no-properties
-                        (region-beginning) (region-end))))
-        (deactivate-mark)
-        (swiper selection))
-    (call-interactively 'swiper)))
+(defmacro defun-use-region (command &rest args)
+  "Define a variant of COMMAND that accepts the region as input.
+
+Additional arguments preceding the selection are specified in ARGS."
+  `(defun ,(intern (concat (symbol-name command) "-use-region")) ()
+     (interactive)
+     (if (region-active-p)
+         (let ((selection (buffer-substring-no-properties
+                           (region-beginning) (region-end))))
+           (deactivate-mark)
+           (,command ,@args selection))
+       (,command ,@args))))
+
+(defun-use-region swiper)
+(defun-use-region counsel-git-grep nil)
+(defun-use-region counsel-ag)
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

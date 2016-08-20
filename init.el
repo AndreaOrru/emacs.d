@@ -11,6 +11,7 @@
 
 ; Add the "lisp/" directory to the load path:
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(setq load-prefer-newer t)  ; Prefer newer .el files.
 
 ; Set external customization file:
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -39,7 +40,6 @@
 
 (require 'init-cc)
 (require 'init-javascript)
-(require 'init-lisp)
 (require 'init-markdown)
 (require 'init-php)
 (require 'init-python)

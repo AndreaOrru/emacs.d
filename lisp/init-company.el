@@ -14,16 +14,28 @@
 (global-company-mode 1)
 (diminish 'company-mode)
 
+(define-key company-mode-map [tab] 'company-indent-or-complete-common)
+(define-key company-mode-map (kbd "TAB") 'company-indent-or-complete-common)
 (define-key company-mode-map (kbd "M-TAB") 'company-try-hard)
-(define-key company-active-map (kbd "M-TAB") 'company-select-next)
+
+(define-key company-active-map [tab] 'company-select-next-if-tooltip-visible-or-complete-selection)
+(define-key company-active-map (kbd "TAB") 'company-select-next-if-tooltip-visible-or-complete-selection)
 (define-key company-active-map (kbd "M-h") 'company-quickhelp-mode)
 
-(setq company-dabbrev-downcase nil)  ; Respect case of pure text.
-(setq company-idle-delay 0.3)        ; Faster autocompletion.
+; Search through candidates more flexibly:
+(setq company-search-regexp-function 'company-search-words-in-any-order-regexp)
+(setq company-show-numbers t)              ; Show numbers for fast selection.
+(setq company-dabbrev-downcase nil)        ; Respect case of pure text.
+(setq company-idle-delay 0.3)              ; Faster autocompletion.
+(setq company-selection-wrap-around t)     ; Cycle candidates.
+(setq-default company-search-filtering t)  ; Filter when searching.
 
 ; Highlight annotation when selected:
 (set-face-background 'company-tooltip-annotation-selection
                      (face-background 'company-tooltip-selection))
+; Adjust search face when selected:
+(set-face-foreground 'company-tooltip-search-selection
+                     (face-foreground 'company-tooltip-search))
 
 (provide 'init-company)
 ;;; init-company.el ends here
