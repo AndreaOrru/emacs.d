@@ -25,7 +25,7 @@
 (global-set-key (kbd "M-g d") 'magit-diff-buffer-file)
 (global-set-key (kbd "M-g M-d") 'magit-diff)
 (global-set-key (kbd "M-g M-c") 'magit-commit)
-(global-set-key (kbd "M-g M-p") 'magit-push)
+(global-set-key (kbd "M-g M-p") 'magit-push-current-to-upstream)
 
 (provide 'init-git)
 ;;; init-git.el ends here
