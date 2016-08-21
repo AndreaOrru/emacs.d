@@ -40,16 +40,20 @@
 ; Progressive expansion of selected region:
 (require-package 'expand-region)
 (setq expand-region-fast-keys-enabled nil)
+(setq expand-region-smart-cursor t)
 (global-set-key (kbd "C-.") 'er/expand-region)
 (global-set-key (kbd "C-,") 'er/contract-region)
 
 ; Transpose line/region up and down:
 (require-package 'move-dup)
-(global-move-dup-mode)
 (diminish 'move-dup-mode)
 (defadvice md/move-line (after my/md-move-line activate)
   "Do not set the mark after moving lines."
   (deactivate-mark))
+(global-set-key (kbd "C-S-n") 'md/move-lines-down)
+(global-set-key (kbd "C-S-p") 'md/move-lines-up)
+(global-set-key (kbd "M-N") 'md/duplicate-down)
+(global-set-key (kbd "M-P") 'md/duplicate-up)
 
 (provide 'init-editing)
 ;;; init-editing.el ends here
