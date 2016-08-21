@@ -21,14 +21,16 @@
 (global-set-key (kbd "C-x 4 f") 'ivy-recentf-other-window)
 ; Ivy for shell and system tools:
 (global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep-use-region)
-(global-set-key (kbd "C-c k") 'counsel-ag-use-region)
+(global-set-key (kbd "C-c k") 'counsel-git-grep-use-region)
+(global-set-key (kbd "C-c C-k") 'counsel-ag-use-region)
 (global-set-key (kbd "C-c l") 'counsel-locate)
 ; Resume last Ivy completion:
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 ; Save window layouts:
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
+; Pick semantic tags:
+(global-set-key (kbd "C-c i") 'counsel-imenu)
 
 (setq ivy-initial-inputs-alist nil)  ; No initial inputs in regex.
 (setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
