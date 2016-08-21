@@ -43,5 +43,13 @@
 (global-set-key (kbd "C-.") 'er/expand-region)
 (global-set-key (kbd "C-,") 'er/contract-region)
 
+; Transpose line/region up and down:
+(require-package 'move-dup)
+(global-move-dup-mode)
+(diminish 'move-dup-mode)
+(defadvice md/move-line (after my/md-move-line activate)
+  "Do not set the mark after moving lines."
+  (deactivate-mark))
+
 (provide 'init-editing)
 ;;; init-editing.el ends here
