@@ -11,7 +11,7 @@
 
 ; Dash documentation:
 (add-hook 'php-mode-hook '(lambda()
-  (setq-local counsel-dash-docsets '("PHP Laravel MySQL"))))
+  (setq-local counsel-dash-docsets '("PHP" "Laravel" "MySQL"))))
 
 (provide 'init-php)
 ;;; init-php.el ends here
