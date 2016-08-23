@@ -12,5 +12,9 @@
 (add-hook 'gfm-mode-hook '(lambda()
   (setq markdown-command "marked")))
 
+; Dash documentation:
+(add-hook 'gfm-mode-hook '(lambda()
+  (setq-local counsel-dash-docsets '("Markdown"))))
+
 (provide 'init-markdown)
 ;;; init-markdown.el ends here

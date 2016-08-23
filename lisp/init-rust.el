@@ -20,5 +20,9 @@
 (require-package 'flycheck-rust)
 (add-hook 'flycheck-mode-hook 'flycheck-rust-setup)
 
+; Dash documentation:
+(add-hook 'python-mode-hook '(lambda()
+  (setq-local counsel-dash-docsets '("Rust"))))
+
 (provide 'init-rust)
 ;;; init-rust.el ends here

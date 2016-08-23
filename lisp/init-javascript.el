@@ -33,5 +33,10 @@
 (require-package 'company-tern)
 (add-to-list 'company-backends 'company-tern)
 
+; Dash documentation:
+(add-hook 'js2-jsx-mode-hook '(lambda()
+  (setq-local counsel-dash-docsets
+              '("JavaScript" "jQuery" "MomentJS" "NodeJS" "React"))))
+
 (provide 'init-javascript)
 ;;; init-javascript.el ends here

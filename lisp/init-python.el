@@ -32,5 +32,9 @@
 (add-hook 'python-mode-hook (lambda()
   (set (make-local-variable 'company-tooltip-align-annotations) t)))
 
+; Dash documentation:
+(add-hook 'python-mode-hook '(lambda()
+  (setq-local counsel-dash-docsets '("Python 3"))))
+
 (provide 'init-python)
 ;;; init-python.el ends here

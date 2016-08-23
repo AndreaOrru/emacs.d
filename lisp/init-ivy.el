@@ -29,8 +29,9 @@
 ; Save window layouts:
 (global-set-key (kbd "C-c v") 'ivy-push-view)
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
-; Pick semantic tags:
-(global-set-key (kbd "C-c i") 'counsel-imenu)
+; Extra stuff:
+(global-set-key (kbd "C-c i") 'counsel-imenu)            ; Semantic tags.
+(global-set-key (kbd "C-c d") 'counsel-dash-use-region)  ; Dash docs.
 
 (setq ivy-initial-inputs-alist nil)  ; No initial inputs in regex.
 (setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
@@ -46,6 +47,12 @@
 (require-package 'smex)
 (defvar smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 (smex-initialize)
+
+; Use Dash to browse documentation:
+(require-package 'counsel-dash)
+(require 'counsel-dash)
+(setq counsel-dash-docsets-path
+      (expand-file-name "docsets" user-emacs-directory))
 
 ; Define custom Ivy functions:
 (require 'recentf)
@@ -72,6 +79,7 @@ Additional arguments preceding the selection are specified in ARGS."
 (defun-use-region swiper)
 (defun-use-region counsel-git-grep nil)
 (defun-use-region counsel-ag)
+(defun-use-region counsel-dash)
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here

@@ -44,5 +44,12 @@
               (append flycheck-disabled-checkers
                       '(c/c++-clang c/c++-gcc)))
 
+; Dash documentation:
+(add-hook 'c-mode-common-hook '(lambda()
+  (when (equal major-mode 'c-mode)
+    (setq-local counsel-dash-docsets '("C")))
+  (when (equal major-mode 'c++-mode)
+    (setq-local counsel-dash-docsets '("C++")))))
+
 (provide 'init-cc)
 ;;; init-cc.el ends here

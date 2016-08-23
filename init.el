@@ -9,9 +9,9 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+(setq load-prefer-newer t)  ; Prefer newer .el files.
 ; Add the "lisp/" directory to the load path:
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(setq load-prefer-newer t)  ; Prefer newer .el files.
 
 ; Set external customization file:
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))

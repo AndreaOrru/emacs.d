@@ -36,5 +36,9 @@
   (if (equal web-mode-content-type "jsx")
     (setq-local web-mode-enable-auto-quoting nil))))
 
+; Dash documentation:
+(add-hook 'python-mode-hook '(lambda()
+  (setq-local counsel-dash-docsets '("HTML" "CSS" "Sass" "Bootstrap 3"))))
+
 (provide 'init-web-mode)
 ;;; init-web-mode ends here
