@@ -45,7 +45,7 @@
 (define-key semantic-mode-map (kbd "C-c P") 'semantic-decoration-unparsed-include-parse-all-includes)
 (define-key semantic-mode-map (kbd "C-c t") 'semantic-analyze-proto-impl-toggle)
 (define-key semantic-mode-map (kbd "C-c j") 'semantic-ia-fast-jump)
-(define-key semantic-mode-map (kbd "M-<mouse-1>") 'semantic-ia-fast-mouse-jump)
+(define-key semantic-mode-map (kbd "M-<down-mouse-1>") 'semantic-ia-fast-mouse-jump)
 
 (define-key semantic-mode-map (kbd "C-c u") 'senator-go-to-up-reference)
 (define-key semantic-mode-map (kbd "C-c p") 'senator-previous-tag)
