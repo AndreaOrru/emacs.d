@@ -11,6 +11,7 @@
 (require 'company)
 (require 'company-dabbrev)
 
+(setq company-global-modes '(not org-mode))
 (global-company-mode 1)
 (diminish 'company-mode)
 
@@ -26,10 +27,12 @@
 ; Search through candidates more flexibly:
 (setq company-search-regexp-function 'company-search-words-in-any-order-regexp)
 (setq company-show-numbers t)              ; Show numbers for fast selection.
-(setq company-dabbrev-downcase nil)        ; Respect case of pure text.
 (setq company-idle-delay 0.3)              ; Faster autocompletion.
 (setq company-selection-wrap-around t)     ; Cycle candidates.
 (setq-default company-search-filtering t)  ; Filter when searching.
+; No duplicate entries:
+(setq company-dabbrev-downcase nil)
+(setq company-dabbrev-ignore-case nil)
 
 ; Sort by frequence:
 (require-package 'company-statistics)

@@ -34,6 +34,7 @@
 (require 'init-cc)
 (require 'init-javascript)
 (require 'init-markdown)
+(require 'init-org)
 (require 'init-php)
 (require 'init-python)
 (require 'init-rust)
