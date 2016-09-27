@@ -11,7 +11,6 @@
 (global-set-key (kbd "C-c a") '(lambda() (interactive) (org-agenda nil "a")))
 (define-key org-mode-map (kbd "M-p") 'org-metaup)
 (define-key org-mode-map (kbd "M-n") 'org-metadown)
-(define-key org-mode-map (kbd "<C-M-return>") 'org-insert-subheading)
 
 (find-file "~/todo.org")
 
