@@ -6,6 +6,7 @@
 ;;; Code:
 (require 'require-package)
 (require-package 'diminish)
+(require-package 'bind-key)
 (require 'apropos)
 
 (setq-default initial-scratch-message ";; Close the world, txEn eht nepO\n\n")

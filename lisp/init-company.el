@@ -11,18 +11,10 @@
 (require 'company)
 (require 'company-dabbrev)
 
-(setq company-global-modes '(not org-mode))
+; Enable Company almost everywhere:
+(setq company-global-modes '(not org-mode term-mode))
 (global-company-mode 1)
 (diminish 'company-mode)
-
-(define-key company-mode-map [tab] 'company-indent-or-complete-common)
-(define-key company-mode-map (kbd "TAB") 'company-indent-or-complete-common)
-(define-key company-mode-map (kbd "M-TAB") 'company-try-hard)
-(define-key company-mode-map (kbd "C-c /") 'company-files)
-
-(define-key company-active-map [tab] 'company-select-next-if-tooltip-visible-or-complete-selection)
-(define-key company-active-map (kbd "TAB") 'company-select-next-if-tooltip-visible-or-complete-selection)
-(define-key company-active-map (kbd "M-h") 'company-quickhelp-mode)
 
 ; Search through candidates more flexibly:
 (setq company-search-regexp-function 'company-search-words-in-any-order-regexp)
@@ -44,6 +36,17 @@
 ; Adjust search face when selected:
 (set-face-foreground 'company-tooltip-search-selection
                      (face-foreground 'company-tooltip-search))
+
+(bind-keys :map company-mode-map
+           ([tab]   . company-indent-or-complete-common)
+           ("TAB"   . company-indent-or-complete-common)
+           ("M-TAB" . company-try-hard)
+           ("C-c /" . company-files))
+
+(bind-keys :map company-active-map
+           ([tab] . company-select-next-if-tooltip-visible-or-complete-selection)
+           ("TAB" . company-select-next-if-tooltip-visible-or-complete-selection)
+           ("M-h" . company-quickhelp-mode))
 
 (provide 'init-company)
 ;;; init-company.el ends here

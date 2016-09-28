@@ -8,11 +8,12 @@
 (require-package 'multiple-cursors)
 
 ; Commands that start from current region/point:
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-S-l") 'mc/mark-all-like-this)
-; Add cursors by clicking:
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+(bind-keys*
+ ("C->"   . mc/mark-next-like-this)
+ ("C-<"   . mc/mark-previous-like-this)
+ ("C-S-l" . mc/mark-all-like-this)
+ ; Add cursors by clicking:
+ ("C-S-<mouse-1>" . mc/add-cursor-on-click))
 
 (provide 'init-multiple-cursors)
 ;;; init-multiple-cursors.el ends here

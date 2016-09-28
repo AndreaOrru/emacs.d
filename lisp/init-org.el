@@ -8,9 +8,11 @@
 
 (setq org-startup-indented t)
 
-(global-set-key (kbd "C-c a") '(lambda() (interactive) (org-agenda nil "a")))
-(define-key org-mode-map (kbd "M-p") 'org-metaup)
-(define-key org-mode-map (kbd "M-n") 'org-metadown)
+(bind-key* "C-c a" (lambda() (interactive) (org-agenda nil "a")))
+(bind-keys :map org-mode-map
+           ("M-p" . org-metaup)
+           ("M-n" . org-metadown)
+           ("C-c C-w" . org-cut-special))
 
 (find-file "~/todo.org")
 

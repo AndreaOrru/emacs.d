@@ -34,15 +34,13 @@
 (add-hook 'prog-mode-hook (lambda()
   (setq show-trailing-whitespace t)))
 
-; Insert line break and then indent the new line:
-(global-set-key (kbd "RET") 'newline-and-indent)
-
 ; Progressive expansion of selected region:
 (require-package 'expand-region)
 (setq expand-region-fast-keys-enabled nil)
 (setq expand-region-smart-cursor t)
-(global-set-key (kbd "C-.") 'er/expand-region)
-(global-set-key (kbd "C-,") 'er/contract-region)
+(bind-keys*
+ ("C-." . er/expand-region)
+ ("C-," . er/contract-region))
 
 ; Transpose line/region up and down:
 (require-package 'move-dup)
@@ -50,10 +48,14 @@
 (defadvice md/move-line (after my/md-move-line activate)
   "Do not set the mark after moving lines."
   (deactivate-mark))
-(global-set-key (kbd "C-S-n") 'md/move-lines-down)
-(global-set-key (kbd "C-S-p") 'md/move-lines-up)
-(global-set-key (kbd "M-N") 'md/duplicate-down)
-(global-set-key (kbd "M-P") 'md/duplicate-up)
+(bind-keys*
+ ("C-S-n" . md/move-lines-down)
+ ("C-S-p" . md/move-lines-up)
+ ("M-N"   . md/duplicate-down)
+ ("M-P"   . md/duplicate-up))
+
+; Insert line break and then indent the new line:
+(bind-key "RET" 'newline-and-indent)
 
 (provide 'init-editing)
 ;;; init-editing.el ends here

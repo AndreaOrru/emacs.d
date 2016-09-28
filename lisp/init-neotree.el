@@ -12,7 +12,7 @@
   (setq neo-smart-open t)                   ; Open around current file.
   (setq neo-vc-integration '(face char))))  ; Git integration.
 
-(global-set-key (kbd "C-c \\") 'neotree-toggle)
+(bind-key* "C-c \\" 'neotree-toggle)
 
 (provide 'init-neotree)
 ;;; init-neotree.el ends here

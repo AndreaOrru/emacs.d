@@ -17,10 +17,7 @@
     ad-do-it))
 
 ; Keybinding to start a terminal:
-(global-set-key (kbd "C-c C-<return>") 'ansi-term)
-
-; Disable Company completion in terminal:
-(add-hook 'term-mode-hook (lambda() (company-mode 0)))
+(bind-key* "C-c C-<return>" 'ansi-term)
 
 (provide 'init-term)
 ;;; init-term.el ends here

@@ -22,12 +22,13 @@
 (setq magit-completing-read-function 'ivy-completing-read)
 
 ; Key bindings:
-(global-set-key (kbd "M-g s") 'magit-status)
-(global-set-key (kbd "M-g M-s") 'magit-dispatch-popup)
-(global-set-key (kbd "M-g d") 'magit-diff-buffer-file)
-(global-set-key (kbd "M-g M-d") 'magit-diff)
-(global-set-key (kbd "M-g M-c") 'magit-commit)
-(global-set-key (kbd "M-g M-p") 'magit-push-current-to-upstream)
+(bind-keys*
+ ("C-x g"   . magit-status)
+ ("C-x C-g" . magit-dispatch-popup)
+ ("M-g d"   . magit-diff-buffer-file)
+ ("M-g M-d" . magit-diff)
+ ("M-g M-c" . magit-commit)
+ ("M-g M-p" . magit-push-current-to-upstream))
 
 (provide 'init-git)
 ;;; init-git.el ends here

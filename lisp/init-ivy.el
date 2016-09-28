@@ -15,24 +15,6 @@
 (diminish 'ivy-mode)
 (diminish 'counsel-mode)
 
-; Ivy for standard Emacs commands:
-(global-set-key (kbd "C-s") 'swiper-use-region)
-(global-set-key (kbd "C-x f") 'ivy-recentf)
-(global-set-key (kbd "C-x 4 f") 'ivy-recentf-other-window)
-; Ivy for shell and system tools:
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c k") 'counsel-git-grep-use-region)
-(global-set-key (kbd "C-c C-k") 'counsel-ag-use-region)
-(global-set-key (kbd "C-c l") 'counsel-locate)
-; Resume last Ivy completion:
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-; Save window layouts:
-(global-set-key (kbd "C-c v") 'ivy-push-view)
-(global-set-key (kbd "C-c V") 'ivy-pop-view)
-; Extra stuff:
-(global-set-key (kbd "C-c i") 'counsel-imenu)            ; Semantic tags.
-(global-set-key (kbd "C-c d") 'counsel-dash-use-region)  ; Dash docs.
-
 (setq ivy-initial-inputs-alist nil)  ; No initial inputs in regex.
 (setq ivy-use-virtual-buffers t)     ; Virtual buffers and recentf.
 ; Ignore order of words while searching:
@@ -53,6 +35,25 @@
 (require 'counsel-dash)
 (setq counsel-dash-docsets-path
       (expand-file-name "docsets" user-emacs-directory))
+
+(bind-keys*
+ ; Ivy for standard Emacs commands:
+ ("C-s"     . swiper-use-region)
+ ("C-x f"   . ivy-recentf)
+ ("C-x 4 f" . ivy-recentf-other-window)
+ ; Ivy for shell and system tools:
+ ("C-c g"   . counsel-git)
+ ("C-c k"   . counsel-git-grep-use-region)
+ ("C-c C-k" . counsel-ag-use-region)
+ ("C-c l"   . counsel-locate)
+ ; Resume last Ivy completion:
+ ("C-c C-r" . ivy-resume)
+ ; Save window layouts:
+ ("C-c v"   . ivy-push-view)
+ ("C-c V"   . ivy-pop-view)
+ ; Extra stuff:
+ ("C-c i"   . counsel-imenu)             ; Semantic tags.
+ ("C-c d"   . counsel-dash-use-region))  ; Dash docs.
 
 ; Define custom Ivy functions:
 (require 'recentf)

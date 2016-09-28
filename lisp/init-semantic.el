@@ -12,12 +12,11 @@
 (add-to-list 'semantic-default-submodes 'global-semantic-highlight-func-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 
-; Disable Semantic for Python mode (conflicts with Anaconda ElDoc):
+; Disable Semantic for everything but C/C++:
 (with-eval-after-load 'semantic
   (add-to-list 'semantic-inhibit-functions (lambda()
-    (equal major-mode 'python-mode))))
-
-(semantic-mode 1)  ; Enable Semantic globally.
+    (not (member major-mode '(c-mode c++-mode))))))
+(semantic-mode 1)
 
 ; Use info extracted from Irony to help Semantic:
 (require 'irony)
@@ -42,17 +41,18 @@
     (semanticdb-file-table-object file)))
 
 ; Key bindings:
-(define-key semantic-mode-map (kbd "C-c P") 'semantic-decoration-unparsed-include-parse-all-includes)
-(define-key semantic-mode-map (kbd "C-c t") 'semantic-analyze-proto-impl-toggle)
-(define-key semantic-mode-map (kbd "C-c j") 'semantic-ia-fast-jump)
-(define-key semantic-mode-map (kbd "M-<down-mouse-1>") 'semantic-ia-fast-mouse-jump)
+(bind-keys :map semantic-mode-map
+           ("C-c P" . semantic-decoration-unparsed-include-parse-all-includes)
+           ("C-c t" . semantic-analyze-proto-impl-toggle)
+           ("C-c j" . semantic-ia-fast-jump)
+           ("M-<down-mouse-1>" . semantic-ia-fast-mouse-jump)
 
-(define-key semantic-mode-map (kbd "C-c u") 'senator-go-to-up-reference)
-(define-key semantic-mode-map (kbd "C-c p") 'senator-previous-tag)
-(define-key semantic-mode-map (kbd "C-c n") 'senator-next-tag)
+           ("C-c u" . senator-go-to-up-reference)
+           ("C-c p" . senator-previous-tag)
+           ("C-c n" . senator-next-tag)
 
-(define-key semantic-mode-map (kbd "C-c C-w") 'senator-kill-tag)
-(define-key semantic-mode-map (kbd "C-c M-w") 'senator-copy-tag)
+           ("C-c C-w" . senator-kill-tag)
+           ("C-c M-w" . senator-copy-tag))
 
 (provide 'init-semantic)
 ;;; init-semantic.el ends here
