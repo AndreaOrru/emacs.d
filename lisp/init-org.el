@@ -7,12 +7,15 @@
 (require 'org)
 
 (setq org-startup-indented t)
+(setq org-default-priority 67)  ; "C" is default priority.
 
 (bind-key* "C-c a" (lambda() (interactive) (org-agenda nil "a")))
 (bind-keys :map org-mode-map
            ("M-p" . org-metaup)
            ("M-n" . org-metadown)
-           ("C-c C-w" . org-cut-special))
+           ("M-S-<return>" . org-insert-subheading)
+           ("C-c C-w" . org-cut-special)
+           ("C-c p" . org-priority))
 
 (find-file "~/todo.org")
 

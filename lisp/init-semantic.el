@@ -42,6 +42,7 @@
 
 ; Key bindings:
 (bind-keys :map semantic-mode-map
+           :filter (member major-mode '(c-mode c++-mode))
            ("C-c P" . semantic-decoration-unparsed-include-parse-all-includes)
            ("C-c t" . semantic-analyze-proto-impl-toggle)
            ("C-c j" . semantic-ia-fast-jump)
