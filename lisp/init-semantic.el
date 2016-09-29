@@ -11,6 +11,9 @@
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-highlight-func-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
+; Disable tag boundary decoration:
+(add-hook 'semantic-mode-hook '(lambda()
+  (semantic-toggle-decoration-style "semantic-tag-boundary" -1)))
 
 ; Disable Semantic for everything but C/C++:
 (with-eval-after-load 'semantic
