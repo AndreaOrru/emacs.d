@@ -6,8 +6,9 @@
 ;;; Code:
 (require 'org)
 
-(setq org-startup-indented t)
-(setq org-default-priority 67)  ; "C" is default priority.
+(setq org-startup-indented t)       ; Indent subheadings.
+(setq org-cycle-separator-lines 1)  ; Show empty line of separation between headlines.
+(setq org-default-priority 67)      ; "C" is default priority.
 
 (bind-key* "C-c a" (lambda() (interactive) (org-agenda nil "a")))
 (bind-keys :map org-mode-map
