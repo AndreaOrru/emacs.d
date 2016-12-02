@@ -1,4 +1,4 @@
 # emacs.d
 Elegant Emacs configuration.
 
-**OLD! I use [Spacemacs](http://spacemacs.org) these days. [Here](https://github.com/AndreaOrru/spacemacs.d) is my config.**
+**OLD! I use [Neovim](https://neovim.io) these days. [Here](https://github.com/AndreaOrru/nvim) is my config.**
